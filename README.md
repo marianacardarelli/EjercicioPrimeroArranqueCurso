@@ -11,6 +11,9 @@ Pequeña aplicación para gestionar lista de tareas desde la consola
 2. Ver tareas pendientes
 3. Marcar tarea completada
 4. Eliminar tarea
+5. Agregar prioridad
+6. Mostrar por prioridad
+7. Salir
 
 # Implementación
 
