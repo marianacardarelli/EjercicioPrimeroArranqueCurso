@@ -161,8 +161,7 @@ public class GestorTareas {
 
     private static void guardarTareasEnArchivo() {
         System.out.println("Guardando listado de tareas actuales en un archivo de texto");
-        try {
-            BufferedWriter br = new BufferedWriter(new FileWriter("archivoTareas.txt"));
+        try( BufferedWriter br = new BufferedWriter(new FileWriter("archivoTareas.txt"));) {
             for (Tarea tarea : tareas) {
                 br.write(tarea.toString());
                 br.newLine();
