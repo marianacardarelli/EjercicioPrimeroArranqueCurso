@@ -8,6 +8,7 @@ public class GestorTareas {
     static ArrayList<Tarea> tareas = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
+
     public static void mostrarMenu() {
         System.out.println("1. Añadir tarea");
         System.out.println("2. Ver tareas pendientes");
@@ -31,7 +32,7 @@ public class GestorTareas {
                 sc.next();
                 opcion = 0;
             }
-        } while (opcion < 1 || opcion > 5);
+        } while (opcion < 1 || opcion > 7);
 
         switch (opcion) {
             case 1 -> anhadirTarea();
@@ -170,7 +171,6 @@ public class GestorTareas {
             throw new RuntimeException(e);
         }
     }
-
     public static void salir() {
         System.exit(0);
     }

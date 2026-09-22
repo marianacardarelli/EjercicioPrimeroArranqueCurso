@@ -17,6 +17,6 @@ Pequeña aplicación para gestionar lista de tareas desde la consola
 
 # Implementación
 
-- Se usa la **última versión de java** jdk27
+- Usamos la JDK 25
 - Almacenamiento de tareas `ArrayList<>`
 - Gestión del UI con `println` y `Scanner`
