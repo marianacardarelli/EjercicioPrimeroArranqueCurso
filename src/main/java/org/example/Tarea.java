@@ -12,13 +12,6 @@ public class Tarea {
         this.prioridad = prioridad;
     }
 
-    public String getPrioridad() {
-        return prioridad;
-    }
-    public void setPrioridad(String prioridad) {
-        this.prioridad = prioridad;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -36,6 +29,14 @@ public class Tarea {
     public void setCompletado(boolean completado) {
         this.completado = completado;
     }
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
 
     @Override
     public String toString() {

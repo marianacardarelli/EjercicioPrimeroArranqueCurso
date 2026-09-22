@@ -12,7 +12,8 @@ public class GestorTareas {
         System.out.println("2. Ver tareas pendientes");
         System.out.println("3. Marcar tarea completada");
         System.out.println("4. Eliminar tarea");
-        System.out.println("5. Salir");
+        System.out.println("5. Filtrar tareas por prioridad");
+        System.out.println("6. Salir");
         System.out.println();
         System.out.print("Elige tu opción: ");
     }
@@ -36,7 +37,8 @@ public class GestorTareas {
             case 2 -> tareasPendientes();
             case 3 -> tareaCompletada();
             case 4 -> eliminarTarea();
-            case 5 -> salir();
+            case 5 -> filtrarPorPrioridad();
+            case 6 -> salir();
         }
     }
 
@@ -125,5 +127,35 @@ public class GestorTareas {
 
     public static void salir() {
         System.exit(0);
+    }
+
+    //Nueva función para que el usuario filtre por prioridad
+    private static void filtrarPorPrioridad() {
+        int eleccion;
+
+        System.out.println("--- Qué Tareas deasea mostrar por prioridad? ---"
+                +"\n"+ "1-Baja " + "\n"
+                + "2-Media" +
+                "\n"+ "3-Alta");
+        eleccion = Integer.parseInt(sc.nextLine());
+        if (eleccion == 1) {
+            for (int i=0; i<tareas.size(); i++ ) {
+                if (tareas.get(i).getPrioridad().equals("Baja")) {
+                    System.out.println(tareas.get(i));
+                }
+            }
+        } else if (eleccion == 2) {
+            for (int i=0; i<tareas.size(); i++ ) {
+                if (tareas.get(i).getPrioridad().equals("Media")) {
+                    System.out.println(tareas.get(i));
+                }
+            }
+        }  else if (eleccion == 3) {
+            for (int i=0; i<tareas.size(); i++ ) {
+                if (tareas.get(i).getPrioridad().equals("Alta")) {
+                    System.out.println(tareas.get(i));
+                }
+            }
+        }
     }
 }
