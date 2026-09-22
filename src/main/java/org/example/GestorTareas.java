@@ -47,8 +47,21 @@ public class GestorTareas {
             System.out.print("Introduce tu tarea: ");
             descripcion = sc.nextLine();
         } while (descripcion.isEmpty());
+        int opcion;
+        String prioridad;
+        System.out.println("Elige la prioridad de la tarea: " + "\n"
+                +"1-Baja"
+                +"\n"+ "2-Media"
+                +"\n"+ "3-Alta");
+        opcion = Integer.parseInt(sc.nextLine());
+        switch (opcion) {
+            case 1 -> prioridad = "Baja";
+            case 2 -> prioridad = "Media";
+            case 3 -> prioridad = "Alta";
+            default -> prioridad = "Sin definir";
+        }
 
-        tareas.add(new Tarea(descripcion, false));
+        tareas.add(new Tarea(descripcion, false, prioridad));
 
         tareasPendientes();
         elegirOpcion();
