@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.*;
 import java.util.*;
 
 public class GestorTareas {
@@ -13,8 +14,8 @@ public class GestorTareas {
         System.out.println("3. Marcar tarea completada");
         System.out.println("4. Eliminar tarea");
         System.out.println("5. Filtrar tareas por prioridad");
-        System.out.println("6. Salir");
-        System.out.println();
+        System.out.println("6.Guardar tareas actuales en archivo de texto");
+        System.out.println("7. Salir");
         System.out.print("Elige tu opción: ");
     }
 
@@ -38,7 +39,8 @@ public class GestorTareas {
             case 3 -> tareaCompletada();
             case 4 -> eliminarTarea();
             case 5 -> filtrarPorPrioridad();
-            case 6 -> salir();
+            case 6 -> guardarTareasEnArchivo();
+            case 7 -> salir();
         }
     }
 
@@ -125,9 +127,7 @@ public class GestorTareas {
         }
     }
 
-    public static void salir() {
-        System.exit(0);
-    }
+
 
     //Nueva función para que el usuario filtre por prioridad
     private static void filtrarPorPrioridad() {
@@ -157,5 +157,22 @@ public class GestorTareas {
                 }
             }
         }
+    }
+
+    private static void guardarTareasEnArchivo() {
+        System.out.println("Guardando listado de tareas actuales en un archivo de texto");
+        try {
+            BufferedWriter br = new BufferedWriter(new FileWriter("archivoTareas.txt"));
+            for (Tarea tarea : tareas) {
+                br.write(tarea.toString());
+                br.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void salir() {
+        System.exit(0);
     }
 }
